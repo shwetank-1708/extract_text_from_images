@@ -1,7 +1,7 @@
-streamlit
-easyocr
-paddleocr
-paddlepaddle
-opencv-python
-pillow
-numpy
+streamlit==1.45.1
+easyocr==1.7.2
+paddleocr==2.8.1
+paddlepaddle==2.6.2
+opencv-python-headless==4.10.0.84
+pillow==11.1.0
+numpy==1.26.4
