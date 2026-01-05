@@ -1,26 +1,18 @@
 from __future__ import annotations
-
 from typing import Any, Dict, List, Union
+
 import numpy as np
 from PIL import Image
 
-from paddleocr import PaddleOCR
 
-
-def load_paddle_ocr(lang: str = "en") -> PaddleOCR:
-    """
-    Load PaddleOCR reader once and reuse.
-    """
-    return PaddleOCR(
-        use_angle_cls=True,
-        lang=lang,
-        show_log=False
-    )
+def load_paddle_ocr(lang: str = "en") -> Any:
+    from paddleocr import PaddleOCR  # ✅ lazy import
+    return PaddleOCR(use_angle_cls=True, lang=lang, show_log=False)
 
 
 def extract_with_paddleocr(
     image: Union[str, Image.Image, np.ndarray],
-    ocr: PaddleOCR
+    ocr: Any
 ) -> Dict[str, Any]:
     if isinstance(image, Image.Image):
         img = np.array(image.convert("RGB"))
