@@ -2,6 +2,14 @@ streamlit==1.45.1
 easyocr==1.7.2
 paddleocr==2.8.1
 paddlepaddle==2.6.2
+
+# Force headless OpenCV
 opencv-python-headless==4.10.0.84
+
+# These two lines force pip to NOT keep full OpenCV builds
+opencv-python==0.0.0
+opencv-contrib-python==0.0.0
+
 pillow==11.1.0
 numpy==1.26.4
+
